@@ -66,9 +66,18 @@ export function AuthProvider({ children }) {
     [setSession]
   );
 
+  const setAuthToken = useCallback((tokenValue) => {
+    if (tokenValue) {
+      localStorage.setItem("ai_coach_token", tokenValue);
+      setToken(tokenValue);
+      // Refresh profile to get user data
+      refreshProfile();
+    }
+  }, [refreshProfile]);
+
   const value = useMemo(
-    () => ({ user, token, loading, login, register, logout, refreshProfile }),
-    [user, token, loading, login, register, logout, refreshProfile]
+    () => ({ user, token, loading, login, register, logout, refreshProfile, setAuthToken }),
+    [user, token, loading, login, register, logout, refreshProfile, setAuthToken]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

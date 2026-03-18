@@ -76,6 +76,15 @@ export default function SignupPage() {
           </button>
         </form>
 
+        <div className="mt-4">
+          <button
+            onClick={() => window.location.href = `${import.meta.env.VITE_API_BASE_URL}/api/auth/google`}
+            className="w-full rounded-lg bg-red-600 py-2 text-sm font-semibold text-white shadow hover:bg-red-700 transition"
+          >
+            Sign up with Google
+          </button>
+        </div>
+
         <p className="mt-6 text-center text-sm text-muted">
           Already have an account? <Link to="/login" className="text-accent">Sign in</Link>
         </p>
