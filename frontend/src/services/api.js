@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || "/api",
+  baseURL: "https://ai-competitive-programming-coach-1.onrender.com",
   headers: {
     "Content-Type": "application/json",
   },

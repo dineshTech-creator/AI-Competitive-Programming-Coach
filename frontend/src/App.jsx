@@ -7,7 +7,6 @@ import InterviewMCQPage from "./pages/InterviewMCQ";
 import LeaderboardPage from "./pages/Leaderboard";
 import LoginPage from "./pages/Login";
 import SignupPage from "./pages/Signup";
-import AuthCallback from "./pages/AuthCallback";
 import Layout from "./components/Layout";
 
 function ProtectedRoute({ children }) {
@@ -37,7 +36,6 @@ export default function App() {
 
       <Route path="/login" element={<LoginPage />} />
       <Route path="/signup" element={<SignupPage />} />
-      <Route path="/auth/callback" element={<AuthCallback />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
